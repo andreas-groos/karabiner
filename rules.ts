@@ -3,6 +3,82 @@ import { KarabinerRules } from "./types";
 import { createHyperSubLayers, app, open, rectangle, shell } from "./utils";
 
 const rules: KarabinerRules[] = [
+  {
+    description: "⌘ 1 opens Vivaldi",
+    manipulators: [
+      {
+        from: {
+          key_code: "1",
+          modifiers: {
+            mandatory: ["command"],
+          },
+        },
+        to: [
+          {
+            shell_command: "open -a 'Vivaldi'",
+          },
+        ],
+        type: "basic",
+      },
+    ],
+  },
+  {
+    description: "⌘ 2 opens Cursor",
+    manipulators: [
+      {
+        from: {
+          key_code: "2",
+          modifiers: {
+            mandatory: ["command"],
+          },
+        },
+        to: [
+          {
+            shell_command: "open -a 'cursor'",
+          },
+        ],
+        type: "basic",
+      },
+    ],
+  },
+  {
+    description: "⌘ 3 opens Warp",
+    manipulators: [
+      {
+        from: {
+          key_code: "3",
+          modifiers: {
+            mandatory: ["command"],
+          },
+        },
+        to: [
+          {
+            shell_command: "open -a 'warp'",
+          },
+        ],
+        type: "basic",
+      },
+    ],
+  },
+  {
+    description: "⌘ 0 opens Finder",
+    manipulators: [
+      {
+        from: {
+          key_code: "0",
+          modifiers: {
+            mandatory: ["command"],
+          },
+        },
+        to: [
+          {
+            shell_command: "open -a 'finder'",
+          },
+        ],
+        type: "basic",
+      },
+    ],
+  },
   // Define the Hyper key itself
   {
     description: "Hyper Key (⌃⌥⇧⌘)",
