@@ -157,6 +157,7 @@ const rules: KarabinerRules[] = [
       z: app("zoom.us"),
       r: app("Finder"),
       m: app("Mail"),
+      a: app("ChatGPT"),
     },
 
     // TODO: This doesn't quite work yet.
@@ -289,6 +290,13 @@ const rules: KarabinerRules[] = [
         to: [
           {
             key_code: "fastforward",
+          },
+        ],
+      },
+      spacebar: {
+        to: [
+          {
+            shell_command: "pmset sleepnow",
           },
         ],
       },
