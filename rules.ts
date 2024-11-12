@@ -135,6 +135,9 @@ const rules: KarabinerRules[] = [
     spacebar: open(
       "raycast://extensions/stellate/mxstbr-commands/create-notion-todo"
     ),
+    t: {
+      // Todoist commands
+    },
     // b = "B"rowse
     b: {
       g: open("https://github.com/graphika/voyager/pulls"),
@@ -146,18 +149,21 @@ const rules: KarabinerRules[] = [
         "https://app.shortcut.com/graphikatech/epic/24107?cf_workflow=500005177&ct_workflow=all&group_by=workflow_state_id&vc_group_by=day"
       ),
       p: open("https://platform.graphika.com/"),
+      l: open("http://localhost:3000/dashboard"),
     },
     // o = "Open" applications
     o: {
       v: app("Vivaldi"),
       c: app("Cursor"),
-      s: app("Slack"),
-      t: app("Warp"),
+      s: app("Spotify"),
+      w: app("Warp"),
       f: app("Figma"),
       z: app("zoom.us"),
       r: app("Finder"),
       m: app("Mail"),
       a: app("ChatGPT"),
+      t: app("Todoist"),
+      k: app("Calendar"),
     },
 
     // TODO: This doesn't quite work yet.
@@ -239,10 +245,19 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
+      comma: {
+        description: "Previous Workspace",
+        to: [{ key_code: "left_arrow", modifiers: ["right_control"] }],
+      },
+      period: {
+        description: "Next Workspace",
+        to: [{ key_code: "right_arrow", modifiers: ["right_control"] }],
+      },
     },
 
     // s = "System"
     s: {
+      b: open(`raycast://extensions/raycast/system/toggle-bluetooth`),
       u: {
         to: [
           {
@@ -290,13 +305,6 @@ const rules: KarabinerRules[] = [
         to: [
           {
             key_code: "fastforward",
-          },
-        ],
-      },
-      spacebar: {
-        to: [
-          {
-            shell_command: "pmset sleepnow",
           },
         ],
       },
