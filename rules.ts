@@ -61,6 +61,25 @@ const rules: KarabinerRules[] = [
     ],
   },
   {
+    description: "⌘ 8 opens Todoist",
+    manipulators: [
+      {
+        from: {
+          key_code: "8",
+          modifiers: {
+            mandatory: ["command"],
+          },
+        },
+        to: [
+          {
+            shell_command: "open -a 'todoist'",
+          },
+        ],
+        type: "basic",
+      },
+    ],
+  },
+  {
     description: "⌘ 0 opens Finder",
     manipulators: [
       {
