@@ -298,6 +298,20 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
+      h: {
+        to: [
+          {
+            key_code: "illumination_decrement",
+          },
+        ],
+      },
+      y: {
+        to: [
+          {
+            key_code: "illumination_increment",
+          },
+        ],
+      },
       k: {
         to: [
           {
