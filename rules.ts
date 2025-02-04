@@ -61,6 +61,104 @@ const rules: KarabinerRules[] = [
     ],
   },
   {
+    description: "⌘ 4 opens Slack",
+    manipulators: [
+      {
+        from: {
+          key_code: "4",
+          modifiers: {
+            mandatory: ["command"],
+          },
+        },
+        to: [
+          {
+            shell_command: "open -a 'Slack'",
+          },
+        ],
+        type: "basic",
+      },
+    ],
+  },
+  {
+    description: "⌘ 5 opens Figma",
+    manipulators: [
+      {
+        from: {
+          key_code: "5",
+          modifiers: {
+            mandatory: ["command"],
+          },
+        },
+        to: [
+          {
+            shell_command: "open -a 'Figma'",
+          },
+        ],
+        type: "basic",
+      },
+    ],
+  },
+  {
+    description: "⌘ 6 opens Zoom",
+    manipulators: [
+      {
+        from: {
+          key_code: "6",
+          modifiers: {
+            mandatory: ["command"],
+          },
+        },
+        to: [
+          {
+            shell_command: "open -a 'zoom.us'",
+          },
+        ],
+        type: "basic",
+      },
+    ],
+  },
+  {
+    description: "⌘11 increases volume",
+    manipulators: [
+      {
+        from: {
+          // @ts-ignore
+          key_code: "11",
+          modifiers: {
+            mandatory: ["command"],
+          },
+        },
+        to: [
+          {
+            key_code: "volume_decrement",
+
+          },
+        ],
+        type: "basic",
+      },
+    ],
+  },
+  {
+    description: "⌘12 decreases volume",
+    manipulators: [
+      {
+        from: {
+          // @ts-ignore
+          key_code: "12",
+          modifiers: {
+            mandatory: ["command"],
+          },
+        },
+        to: [
+          {
+            key_code: "volume_increment",
+          },
+        ],
+        type: "basic",
+      },
+    ],
+  },
+  {
     description: "⌘ 8 opens Todoist",
     manipulators: [
       {
@@ -92,6 +190,47 @@ const rules: KarabinerRules[] = [
         to: [
           {
             shell_command: "open -a 'finder'",
+          },
+        ],
+        type: "basic",
+      },
+    ],
+  },
+  {
+    description: "⌘11 increases volume",
+    manipulators: [
+      {
+        from: {
+          // @ts-ignore
+          key_code: "11",
+          modifiers: {
+            mandatory: ["command"],
+          },
+        },
+        to: [
+          {
+            key_code: "volume_decrement",
+
+          },
+        ],
+        type: "basic",
+      },
+    ],
+  },
+  {
+    description: "⌘12 decreases volume",
+    manipulators: [
+      {
+        from: {
+          // @ts-ignore
+          key_code: "12",
+          modifiers: {
+            mandatory: ["command"],
+          },
+        },
+        to: [
+          {
+            key_code: "volume_increment",
           },
         ],
         type: "basic",
@@ -174,14 +313,13 @@ const rules: KarabinerRules[] = [
     o: {
       v: app("Vivaldi"),
       c: app("Cursor"),
-      s: app("Spotify"),
-      w: app("Warp"),
+      s: app("Slack"),
+      t: app("Warp"),
       f: app("Figma"),
       z: app("zoom.us"),
       r: app("Finder"),
       m: app("Mail"),
       a: app("ChatGPT"),
-      t: app("Todoist"),
       k: app("Calendar"),
     },
 
@@ -295,20 +433,6 @@ const rules: KarabinerRules[] = [
         to: [
           {
             key_code: "display_brightness_increment",
-          },
-        ],
-      },
-      h: {
-        to: [
-          {
-            key_code: "illumination_decrement",
-          },
-        ],
-      },
-      y: {
-        to: [
-          {
-            key_code: "illumination_increment",
           },
         ],
       },
