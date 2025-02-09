@@ -118,20 +118,16 @@ const rules: KarabinerRules[] = [
     ],
   },
   {
-    description: "⌘11 increases volume",
+    description: "⌘11 decreases volume",
     manipulators: [
       {
         from: {
           // @ts-ignore
           key_code: "11",
-          modifiers: {
-            mandatory: ["command"],
-          },
         },
         to: [
           {
             key_code: "volume_decrement",
-
           },
         ],
         type: "basic",
@@ -139,15 +135,12 @@ const rules: KarabinerRules[] = [
     ],
   },
   {
-    description: "⌘12 decreases volume",
+    description: "⌘12 increases volume",
     manipulators: [
       {
         from: {
           // @ts-ignore
           key_code: "12",
-          modifiers: {
-            mandatory: ["command"],
-          },
         },
         to: [
           {
@@ -190,47 +183,6 @@ const rules: KarabinerRules[] = [
         to: [
           {
             shell_command: "open -a 'finder'",
-          },
-        ],
-        type: "basic",
-      },
-    ],
-  },
-  {
-    description: "⌘11 increases volume",
-    manipulators: [
-      {
-        from: {
-          // @ts-ignore
-          key_code: "11",
-          modifiers: {
-            mandatory: ["command"],
-          },
-        },
-        to: [
-          {
-            key_code: "volume_decrement",
-
-          },
-        ],
-        type: "basic",
-      },
-    ],
-  },
-  {
-    description: "⌘12 decreases volume",
-    manipulators: [
-      {
-        from: {
-          // @ts-ignore
-          key_code: "12",
-          modifiers: {
-            mandatory: ["command"],
-          },
-        },
-        to: [
-          {
-            key_code: "volume_increment",
           },
         ],
         type: "basic",
