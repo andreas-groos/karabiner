@@ -122,8 +122,7 @@ const rules: KarabinerRules[] = [
     manipulators: [
       {
         from: {
-          // @ts-ignore
-          key_code: "11",
+          key_code: "f11",
         },
         to: [
           {
@@ -139,8 +138,7 @@ const rules: KarabinerRules[] = [
     manipulators: [
       {
         from: {
-          // @ts-ignore
-          key_code: "12",
+          key_code: "f12",
         },
         to: [
           {
