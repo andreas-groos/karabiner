@@ -58,6 +58,8 @@
 | Hyper + W, M | Forward |
 | Hyper + W, , | Previous Workspace |
 | Hyper + W, . | Next Workspace |
+| Hyper + W, E Next App (like Cmd-Tab) |
+| Hyper + W, R | Previous App |
 
 ### System Controls (Hyper + S)
 | Shortcut | Action |

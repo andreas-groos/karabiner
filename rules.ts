@@ -362,6 +362,24 @@ const rules: KarabinerRules[] = [
         description: "Next Workspace",
         to: [{ key_code: "right_arrow", modifiers: ["right_control"] }],
       },
+      e: {
+        description: "Next App",
+        to: [
+          {
+            key_code: "tab",
+            modifiers: ["command"],
+          },
+        ],
+      },
+      r: {
+        description: "Previous App",
+        to: [
+          {
+            key_code: "tab",
+            modifiers: ["shift", "command"],
+          },
+        ],
+      },
     },
 
     // s = "System"
