@@ -67,6 +67,101 @@
             ]
           },
           {
+            "description": "⌘ 4 opens Slack",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "4",
+                  "modifiers": {
+                    "mandatory": [
+                      "command"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Slack'"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "⌘ 5 opens Figma",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "5",
+                  "modifiers": {
+                    "mandatory": [
+                      "command"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Figma'"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "⌘ 6 opens Zoom",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "6",
+                  "modifiers": {
+                    "mandatory": [
+                      "command"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'zoom.us'"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "⌘11 decreases volume",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "11"
+                },
+                "to": [
+                  {
+                    "key_code": "volume_decrement"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "⌘12 increases volume",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "12"
+                },
+                "to": [
+                  {
+                    "key_code": "volume_increment"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "⌘ 8 opens Todoist",
             "manipulators": [
               {
@@ -633,10 +728,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Spotify.app'"
+                    "shell_command": "open -a 'Slack.app'"
                   }
                 ],
-                "description": "Open -a 'Spotify.app'",
+                "description": "Open -a 'Slack.app'",
                 "type": "basic",
                 "from": {
                   "key_code": "s",
@@ -663,7 +758,7 @@
                 "description": "Open -a 'Warp.app'",
                 "type": "basic",
                 "from": {
-                  "key_code": "w",
+                  "key_code": "t",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -784,30 +879,6 @@
                 "type": "basic",
                 "from": {
                   "key_code": "a",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_o",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "open -a 'Todoist.app'"
-                  }
-                ],
-                "description": "Open -a 'Todoist.app'",
-                "type": "basic",
-                "from": {
-                  "key_code": "t",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1305,6 +1376,61 @@
                     "value": 1
                   }
                 ]
+              },
+              {
+                "description": "Next App",
+                "to": [
+                  {
+                    "key_code": "tab",
+                    "modifiers": [
+                      "command"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "e",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "Previous App",
+                "to": [
+                  {
+                    "key_code": "tab",
+                    "modifiers": [
+                      "shift",
+                      "command"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "r",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
               }
             ]
           },
@@ -1460,52 +1586,6 @@
                 "type": "basic",
                 "from": {
                   "key_code": "i",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_s",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "key_code": "illumination_decrement"
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "h",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_s",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "key_code": "illumination_increment"
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "y",
                   "modifiers": {
                     "optional": [
                       "any"
