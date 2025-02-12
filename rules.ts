@@ -2,6 +2,56 @@ import fs from "fs";
 import { KarabinerRules } from "./types";
 import { createHyperSubLayers, app, open, rectangle, shell } from "./utils";
 
+const ctrlVim = {
+  "description": "Left ctrl + hjkl to arrow keys Vim",
+  "manipulators": [
+      {
+          "from": {
+              "key_code": "h",
+              "modifiers": {
+                  "mandatory": ["left_control"],
+                  "optional": ["any"]
+              }
+          },
+          "to": [{ "key_code": "left_arrow" }],
+          "type": "basic"
+      },
+      {
+          "from": {
+              "key_code": "j",
+              "modifiers": {
+                  "mandatory": ["left_control"],
+                  "optional": ["any"]
+              }
+          },
+          "to": [{ "key_code": "down_arrow" }],
+          "type": "basic"
+      },
+      {
+          "from": {
+              "key_code": "k",
+              "modifiers": {
+                  "mandatory": ["left_control"],
+                  "optional": ["any"]
+              }
+          },
+          "to": [{ "key_code": "up_arrow" }],
+          "type": "basic"
+      },
+      {
+          "from": {
+              "key_code": "l",
+              "modifiers": {
+                  "mandatory": ["left_control"],
+                  "optional": ["any"]
+              }
+          },
+          "to": [{ "key_code": "right_arrow" }],
+          "type": "basic"
+      }
+  ]
+}
+
 const rules: KarabinerRules[] = [
   {
     description: "⌘ 1 opens Vivaldi",
@@ -486,7 +536,7 @@ fs.writeFileSync(
       profiles: [
         {
           complex_modifications: {
-            rules,
+            rules: [...rules,ctrlVim],
           },
           name: "Andreas",
           selected: true,
