@@ -3,54 +3,54 @@ import { KarabinerRules } from "./types";
 import { createHyperSubLayers, app, open, rectangle, shell } from "./utils";
 
 const ctrlVim = {
-  "description": "Left ctrl + hjkl to arrow keys Vim",
-  "manipulators": [
-      {
-          "from": {
-              "key_code": "h",
-              "modifiers": {
-                  "mandatory": ["left_control"],
-                  "optional": ["any"]
-              }
-          },
-          "to": [{ "key_code": "left_arrow" }],
-          "type": "basic"
+  description: "Left ctrl + hjkl to arrow keys Vim",
+  manipulators: [
+    {
+      from: {
+        key_code: "h",
+        modifiers: {
+          mandatory: ["left_control"],
+          optional: ["any"],
+        },
       },
-      {
-          "from": {
-              "key_code": "j",
-              "modifiers": {
-                  "mandatory": ["left_control"],
-                  "optional": ["any"]
-              }
-          },
-          "to": [{ "key_code": "down_arrow" }],
-          "type": "basic"
+      to: [{ key_code: "left_arrow" }],
+      type: "basic",
+    },
+    {
+      from: {
+        key_code: "j",
+        modifiers: {
+          mandatory: ["left_control"],
+          optional: ["any"],
+        },
       },
-      {
-          "from": {
-              "key_code": "k",
-              "modifiers": {
-                  "mandatory": ["left_control"],
-                  "optional": ["any"]
-              }
-          },
-          "to": [{ "key_code": "up_arrow" }],
-          "type": "basic"
+      to: [{ key_code: "down_arrow" }],
+      type: "basic",
+    },
+    {
+      from: {
+        key_code: "k",
+        modifiers: {
+          mandatory: ["left_control"],
+          optional: ["any"],
+        },
       },
-      {
-          "from": {
-              "key_code": "l",
-              "modifiers": {
-                  "mandatory": ["left_control"],
-                  "optional": ["any"]
-              }
-          },
-          "to": [{ "key_code": "right_arrow" }],
-          "type": "basic"
-      }
-  ]
-}
+      to: [{ key_code: "up_arrow" }],
+      type: "basic",
+    },
+    {
+      from: {
+        key_code: "l",
+        modifiers: {
+          mandatory: ["left_control"],
+          optional: ["any"],
+        },
+      },
+      to: [{ key_code: "right_arrow" }],
+      type: "basic",
+    },
+  ],
+};
 
 const rules: KarabinerRules[] = [
   {
@@ -73,7 +73,7 @@ const rules: KarabinerRules[] = [
     ],
   },
   {
-    description: "⌘ 2 opens Cursor",
+    description: "⌘ 2 opens VSCode",
     manipulators: [
       {
         from: {
@@ -84,7 +84,7 @@ const rules: KarabinerRules[] = [
         },
         to: [
           {
-            shell_command: "open -a 'cursor'",
+            shell_command: `open -a "Visual Studio Code"`,
           },
         ],
         type: "basic",
@@ -312,7 +312,7 @@ const rules: KarabinerRules[] = [
     // o = "Open" applications
     o: {
       v: app("Vivaldi"),
-      c: app("Cursor"),
+      c: app("Visual Studio Code"),
       s: app("Slack"),
       t: app("Warp"),
       f: app("Figma"),
@@ -536,7 +536,7 @@ fs.writeFileSync(
       profiles: [
         {
           complex_modifications: {
-            rules: [...rules,ctrlVim],
+            rules: [...rules, ctrlVim],
           },
           name: "Andreas",
           selected: true,
