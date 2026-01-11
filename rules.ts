@@ -304,10 +304,13 @@ const rules: KarabinerRules[] = [
         "https://www.notion.so/graphika/Platform-Updates-e928e31f48b641c5a3e7b8968cfcbda2"
       ),
       s: open(
-        "https://app.shortcut.com/graphikatech/epic/24107?cf_workflow=500005177&ct_workflow=all&group_by=workflow_state_id&vc_group_by=day"
+        "https://app.shortcut.com/graphikatech/epic/26551?group_by=workflow_state_id&hide_subtasks=false&vc_group_by=day&ct_workflow=all&cf_workflow=500005177" // Full Search Epic
+      ),
+      m: open(
+        "https://app.shortcut.com/graphikatech/stories/space/25645?team_scope_id=v2%3At%3A62e2a8fc-e7c2-43e1-87c1-39c7b8f3c0eb%3A62e2abca-d1d7-4c01-a029-5cca7ea4e8b4" // Shortcut my work
       ),
       p: open("https://platform.graphika.com/"),
-      l: open("http://localhost:3000/dashboard"),
+      l: open("http://localhost:3000/search"),
     },
     // o = "Open" applications
     o: {
@@ -321,6 +324,7 @@ const rules: KarabinerRules[] = [
       m: app("Mail"),
       a: app("ChatGPT"),
       k: app("Calendar"),
+      p: app("Spotify"),
     },
 
     // TODO: This doesn't quite work yet.
@@ -340,15 +344,6 @@ const rules: KarabinerRules[] = [
 
     // w = "Window" via rectangle.app
     w: {
-      semicolon: {
-        description: "Window: Hide",
-        to: [
-          {
-            key_code: "h",
-            modifiers: ["right_command"],
-          },
-        ],
-      },
       y: rectangle("previous-display"),
       o: rectangle("next-display"),
       k: rectangle("top-half"),
@@ -402,15 +397,17 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      comma: {
+      slash: {
+        // seemingly not working
         description: "Previous Workspace",
         to: [{ key_code: "left_arrow", modifiers: ["right_control"] }],
       },
-      period: {
+      quote: {
+        // seemingly not working
         description: "Next Workspace",
         to: [{ key_code: "right_arrow", modifiers: ["right_control"] }],
       },
-      e: {
+      semicolon: {
         description: "Next App",
         to: [
           {
@@ -419,7 +416,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      r: {
+      comma: {
         description: "Previous App",
         to: [
           {
@@ -429,7 +426,6 @@ const rules: KarabinerRules[] = [
         ],
       },
     },
-
     // s = "System"
     s: {
       b: open(`raycast://extensions/raycast/system/toggle-bluetooth`),
@@ -490,17 +486,7 @@ const rules: KarabinerRules[] = [
       // "T"heme
       t: open(`raycast://extensions/raycast/system/toggle-system-appearance`),
       c: open("raycast://extensions/raycast/system/open-camera"),
-      // 'v'oice
-      v: {
-        to: [
-          {
-            key_code: "spacebar",
-            modifiers: ["left_option"],
-          },
-        ],
-      },
     },
-
     // c = Musi*c* which isn't "m" because we want it to be on the left hand
     c: {
       p: {

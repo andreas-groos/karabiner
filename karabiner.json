@@ -533,13 +533,37 @@
               {
                 "to": [
                   {
-                    "shell_command": "open https://app.shortcut.com/graphikatech/epic/24107?cf_workflow=500005177&ct_workflow=all&group_by=workflow_state_id&vc_group_by=day"
+                    "shell_command": "open https://app.shortcut.com/graphikatech/epic/26551?group_by=workflow_state_id&hide_subtasks=false&vc_group_by=day&ct_workflow=all&cf_workflow=500005177"
                   }
                 ],
-                "description": "Open https://app.shortcut.com/graphikatech/epic/24107?cf_workflow=500005177&ct_workflow=all&group_by=workflow_state_id&vc_group_by=day",
+                "description": "Open https://app.shortcut.com/graphikatech/epic/26551?group_by=workflow_state_id&hide_subtasks=false&vc_group_by=day&ct_workflow=all&cf_workflow=500005177",
                 "type": "basic",
                 "from": {
                   "key_code": "s",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_b",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open https://app.shortcut.com/graphikatech/stories/space/25645?team_scope_id=v2%3At%3A62e2a8fc-e7c2-43e1-87c1-39c7b8f3c0eb%3A62e2abca-d1d7-4c01-a029-5cca7ea4e8b4"
+                  }
+                ],
+                "description": "Open https://app.shortcut.com/graphikatech/stories/space/25645?team_scope_id=v2%3At%3A62e2a8fc-e7c2-43e1-87c1-39c7b8f3c0eb%3A62e2abca-d1d7-4c01-a029-5cca7ea4e8b4",
+                "type": "basic",
+                "from": {
+                  "key_code": "m",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -581,10 +605,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open http://localhost:3000/dashboard"
+                    "shell_command": "open http://localhost:3000/search"
                   }
                 ],
-                "description": "Open http://localhost:3000/dashboard",
+                "description": "Open http://localhost:3000/search",
                 "type": "basic",
                 "from": {
                   "key_code": "l",
@@ -916,6 +940,30 @@
                     "value": 1
                   }
                 ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'Spotify.app'"
+                  }
+                ],
+                "description": "Open -a 'Spotify.app'",
+                "type": "basic",
+                "from": {
+                  "key_code": "p",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  }
+                ]
               }
             ]
           },
@@ -988,33 +1036,6 @@
                   {
                     "type": "variable_if",
                     "name": "hyper",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "description": "Window: Hide",
-                "to": [
-                  {
-                    "key_code": "h",
-                    "modifiers": [
-                      "right_command"
-                    ]
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "semicolon",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_w",
                     "value": 1
                   }
                 ]
@@ -1335,7 +1356,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "comma",
+                  "key_code": "slash",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1362,7 +1383,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "period",
+                  "key_code": "quote",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1389,7 +1410,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "e",
+                  "key_code": "semicolon",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1417,7 +1438,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "r",
+                  "key_code": "comma",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1754,32 +1775,6 @@
                 "type": "basic",
                 "from": {
                   "key_code": "c",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_s",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "key_code": "spacebar",
-                    "modifiers": [
-                      "left_option"
-                    ]
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "v",
                   "modifiers": {
                     "optional": [
                       "any"
