@@ -25,7 +25,7 @@
             ]
           },
           {
-            "description": "⌘ 2 opens VSCode",
+            "description": "⌘ 2 opens Cursor",
             "manipulators": [
               {
                 "from": {
@@ -38,7 +38,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "open -a \"Visual Studio Code\""
+                    "shell_command": "open -a \"Cursor\""
                   }
                 ],
                 "type": "basic"
@@ -46,7 +46,7 @@
             ]
           },
           {
-            "description": "⌘ 3 opens Warp",
+            "description": "⌘ 3 opens iTerm",
             "manipulators": [
               {
                 "from": {
@@ -59,7 +59,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "open -a 'warp'"
+                    "shell_command": "open -a 'iTerm'"
                   }
                 ],
                 "type": "basic"
@@ -728,10 +728,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Visual Studio Code.app'"
+                    "shell_command": "open -a 'Cursor.app'"
                   }
                 ],
-                "description": "Open -a 'Visual Studio Code.app'",
+                "description": "Open -a 'Cursor.app'",
                 "type": "basic",
                 "from": {
                   "key_code": "c",
@@ -776,10 +776,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Warp.app'"
+                    "shell_command": "open -a 'iTerm.app'"
                   }
                 ],
-                "description": "Open -a 'Warp.app'",
+                "description": "Open -a 'iTerm.app'",
                 "type": "basic",
                 "from": {
                   "key_code": "t",

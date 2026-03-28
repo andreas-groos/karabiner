@@ -73,7 +73,7 @@ const rules: KarabinerRules[] = [
     ],
   },
   {
-    description: "⌘ 2 opens VSCode",
+    description: "⌘ 2 opens Cursor",
     manipulators: [
       {
         from: {
@@ -84,7 +84,7 @@ const rules: KarabinerRules[] = [
         },
         to: [
           {
-            shell_command: `open -a "Visual Studio Code"`,
+            shell_command: `open -a "Cursor"`,
           },
         ],
         type: "basic",
@@ -92,7 +92,7 @@ const rules: KarabinerRules[] = [
     ],
   },
   {
-    description: "⌘ 3 opens Warp",
+    description: "⌘ 3 opens iTerm",
     manipulators: [
       {
         from: {
@@ -103,7 +103,7 @@ const rules: KarabinerRules[] = [
         },
         to: [
           {
-            shell_command: "open -a 'warp'",
+            shell_command: "open -a 'iTerm'",
           },
         ],
         type: "basic",
@@ -315,9 +315,9 @@ const rules: KarabinerRules[] = [
     // o = "Open" applications
     o: {
       v: app("Vivaldi"),
-      c: app("Visual Studio Code"),
+      c: app("Cursor"),
       s: app("Slack"),
-      t: app("Warp"),
+      t: app("iTerm"),
       f: app("Figma"),
       z: app("zoom.us"),
       r: app("Finder"),
