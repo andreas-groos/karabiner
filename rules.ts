@@ -168,6 +168,25 @@ const rules: KarabinerRules[] = [
     ],
   },
   {
+    description: "⌘ 7 opens VSCode",
+    manipulators: [
+      {
+        from: {
+          key_code: "7",
+          modifiers: {
+            mandatory: ["command"],
+          },
+        },
+        to: [
+          {
+            shell_command: "open -a 'Visual Studio Code'",
+          },
+        ],
+        type: "basic",
+      },
+    ],
+  },
+  {
     description: "⌘11 decreases volume",
     manipulators: [
       {
@@ -316,6 +335,7 @@ const rules: KarabinerRules[] = [
     o: {
       v: app("Vivaldi"),
       c: app("Cursor"),
+      i: app("Visual Studio Code"),
       s: app("Slack"),
       t: app("iTerm"),
       f: app("Figma"),
