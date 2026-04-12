@@ -92,7 +92,7 @@ const rules: KarabinerRules[] = [
     ],
   },
   {
-    description: "⌘ 3 opens iTerm",
+    description: "⌘ 3 opens Warp",
     manipulators: [
       {
         from: {
@@ -103,7 +103,7 @@ const rules: KarabinerRules[] = [
         },
         to: [
           {
-            shell_command: "open -a 'iTerm'",
+            shell_command: "open -a 'Warp'",
           },
         ],
         type: "basic",
@@ -337,7 +337,7 @@ const rules: KarabinerRules[] = [
       c: app("Cursor"),
       i: app("Visual Studio Code"),
       s: app("Slack"),
-      t: app("iTerm"),
+      t: app("Warp"),
       f: app("Figma"),
       z: app("zoom.us"),
       r: app("Finder"),
