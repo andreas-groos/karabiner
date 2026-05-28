@@ -303,9 +303,15 @@ const rules: KarabinerRules[] = [
       n: open(
         "https://www.notion.so/graphika/Platform-Updates-e928e31f48b641c5a3e7b8968cfcbda2"
       ),
-      s: open(
-        "https://app.shortcut.com/graphikatech/epic/26551?group_by=workflow_state_id&hide_subtasks=false&vc_group_by=day&ct_workflow=all&cf_workflow=500005177" // Full Search Epic
-      ),
+      s: {
+        description: "Switch to SoundCloud tab",
+        to: [
+          {
+            shell_command:
+              "osascript -e 'tell application \"Vivaldi\" to activate' -e 'tell application \"Vivaldi\"' -e 'set targetUrl to \"https://soundcloud.com\"' -e 'set foundTab to false' -e 'repeat with w from 1 to count of windows' -e 'set tIndex to 0' -e 'repeat with t in tabs of window w' -e 'set tIndex to tIndex + 1' -e 'try' -e 'if (URL of t) contains \"soundcloud.com\" then' -e 'set active tab index of window w to tIndex' -e 'set index of window w to 1' -e 'set foundTab to true' -e 'exit repeat' -e 'end if' -e 'end try' -e 'end repeat' -e 'if foundTab then exit repeat' -e 'end repeat' -e 'if not foundTab then open location targetUrl' -e 'end tell'",
+          },
+        ],
+      },
       m: open(
         "https://app.shortcut.com/graphikatech/stories/space/25645?team_scope_id=v2%3At%3A62e2a8fc-e7c2-43e1-87c1-39c7b8f3c0eb%3A62e2abca-d1d7-4c01-a029-5cca7ea4e8b4" // Shortcut my work
       ),
