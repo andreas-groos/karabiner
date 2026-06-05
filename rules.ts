@@ -312,6 +312,19 @@ const rules: KarabinerRules[] = [
     spacebar: open(
       "raycast://extensions/stellate/mxstbr-commands/create-notion-todo"
     ),
+    u: {
+      description: "Backspace",
+      to: [{ key_code: "delete_or_backspace" }],
+    },
+    y: {
+      description: "Delete Word",
+      to: [
+        {
+          key_code: "delete_or_backspace",
+          modifiers: ["left_option"],
+        },
+      ],
+    },
     t: {
       // Todoist commands
     },
