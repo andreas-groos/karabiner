@@ -325,6 +325,24 @@ const rules: KarabinerRules[] = [
         },
       ],
     },
+    n: {
+      description: "Move Word Back",
+      to: [
+        {
+          key_code: "left_arrow",
+          modifiers: ["left_option"],
+        },
+      ],
+    },
+    m: {
+      description: "Move Word Forward",
+      to: [
+        {
+          key_code: "right_arrow",
+          modifiers: ["left_option"],
+        },
+      ],
+    },
     t: {
       // Todoist commands
     },
