@@ -323,13 +323,13 @@ const rules: KarabinerRules[] = [
         "https://www.notion.so/graphika/Platform-Updates-e928e31f48b641c5a3e7b8968cfcbda2"
       ),
       s: open(
-        "https://app.shortcut.com/graphikatech/epic/26551?group_by=workflow_state_id&hide_subtasks=false&vc_group_by=day&ct_workflow=all&cf_workflow=500005177" // Full Search Epic
+        "https://app.shortcut.com/graphikatech/iteration/28269?group_by=workflow_state_id&hide_subtasks=false&owner_ids=62ea7bec-e619-413f-977b-d903f6f1548d" // Full Search Epic
       ),
       m: open(
         "https://app.shortcut.com/graphikatech/stories/space/25645?team_scope_id=v2%3At%3A62e2a8fc-e7c2-43e1-87c1-39c7b8f3c0eb%3A62e2abca-d1d7-4c01-a029-5cca7ea4e8b4" // Shortcut my work
       ),
       p: open("https://platform.graphika.com/"),
-      l: open("http://localhost:3000/search"),
+      l: open("http://localhost:3000"),
     },
     // o = "Open" applications
     o: {
@@ -339,7 +339,6 @@ const rules: KarabinerRules[] = [
       s: app("Slack"),
       t: app("Warp"),
       f: app("Figma"),
-      z: app("zoom.us"),
       r: app("Finder"),
       m: app("Mail"),
       a: app("ChatGPT"),
@@ -448,7 +447,7 @@ const rules: KarabinerRules[] = [
     },
     // s = "System"
     s: {
-      b: open(`raycast://extensions/raycast/system/toggle-bluetooth`),
+      // b: open(`raycast://extensions/raycast/system/toggle-bluetooth`),
       u: {
         to: [
           {
