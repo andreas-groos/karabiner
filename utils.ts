@@ -1,4 +1,4 @@
-import { To, KeyCode, Manipulator, KarabinerRules } from "./types";
+import { To, KeyCode, Manipulator, KarabinerRules, Modifiers } from "./types";
 
 /**
  * Custom way to describe a command in a layer
@@ -103,51 +103,80 @@ export function createHyperSubLayer(
  * have all the hyper variable names in order to filter them and make sure only one
  * activates at a time
  */
-export function createHyperSubLayers(subLayers: {
-  [key_code in KeyCode]?: HyperKeySublayer | LayerCommand;
-}): KarabinerRules[] {
+export function createHyperSubLayers(
+  subLayers: {
+    [key_code in KeyCode]?: HyperKeySublayer | LayerCommand;
+  },
+  extraBindings: HyperBinding[] = []
+): KarabinerRules[] {
   const allSubLayerVariables = (
     Object.keys(subLayers) as (keyof typeof subLayers)[]
   ).map((sublayer_key) => generateSubLayerVariableName(sublayer_key));
 
-  return Object.entries(subLayers).map(([key, value]) =>
-    "to" in value
-      ? {
-          description: `Hyper Key + ${key}`,
-          manipulators: [
-            {
-              ...value,
-              type: "basic" as const,
-              from: {
-                key_code: key as KeyCode,
-                modifiers: {
-                  optional: ["any"],
-                },
-              },
-              conditions: [
-                {
-                  type: "variable_if",
-                  name: "hyper",
-                  value: 1,
-                },
-                ...allSubLayerVariables.map((subLayerVariable) => ({
-                  type: "variable_if" as const,
-                  name: subLayerVariable,
-                  value: 0,
-                })),
-              ],
-            },
-          ],
-        }
-      : {
-          description: `Hyper Key sublayer "${key}"`,
-          manipulators: createHyperSubLayer(
-            key as KeyCode,
-            value,
-            allSubLayerVariables
-          ),
-        }
-  );
+  return [
+    ...Object.entries(subLayers).map(([key, value]) =>
+      "to" in value
+        ? createHyperKeyRule(key as KeyCode, value, allSubLayerVariables)
+        : {
+            description: `Hyper Key sublayer "${key}"`,
+            manipulators: createHyperSubLayer(
+              key as KeyCode,
+              value,
+              allSubLayerVariables
+            ),
+          }
+    ),
+    ...extraBindings.map((binding) =>
+      createHyperKeyRule(
+        binding.key,
+        binding.command,
+        allSubLayerVariables,
+        binding.modifiers,
+        binding.description
+      )
+    ),
+  ];
+}
+
+type HyperBinding = {
+  key: KeyCode;
+  command: LayerCommand;
+  modifiers?: Modifiers;
+  description?: string;
+};
+
+function createHyperKeyRule(
+  key: KeyCode,
+  command: LayerCommand,
+  allSubLayerVariables: string[],
+  modifiers: Modifiers = { optional: ["any"] },
+  description?: string
+): KarabinerRules {
+  return {
+    description: description ?? command.description ?? `Hyper Key + ${key}`,
+    manipulators: [
+      {
+        ...command,
+        type: "basic" as const,
+        from: {
+          key_code: key,
+          modifiers,
+        },
+        conditions: [
+          {
+            type: "variable_if",
+            name: "hyper",
+            value: 1,
+          },
+          ...allSubLayerVariables.map((subLayerVariable) => ({
+            type: "variable_if" as const,
+            name: subLayerVariable,
+            value: 0,
+          })),
+        ],
+      },
+    ],
+  };
 }
 
 function generateSubLayerVariableName(key: KeyCode) {
