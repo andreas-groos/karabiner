@@ -562,7 +562,36 @@ const rules: KarabinerRules[] = [
         "raycast://extensions/raycast/clipboard-history/clipboard-history"
       ),
     },
-  }),
+  }, [
+    {
+      key: "k",
+      description: "Hyper Key + Shift + K",
+      modifiers: { mandatory: ["shift"] },
+      command: {
+        description: "Scroll to Top",
+        to: [
+          {
+            key_code: "up_arrow",
+            modifiers: ["command"],
+          },
+        ],
+      },
+    },
+    {
+      key: "j",
+      description: "Hyper Key + Shift + J",
+      modifiers: { mandatory: ["shift"] },
+      command: {
+        description: "Scroll to Bottom",
+        to: [
+          {
+            key_code: "down_arrow",
+            modifiers: ["command"],
+          },
+        ],
+      },
+    },
+  ]),
 ];
 
 fs.writeFileSync(
