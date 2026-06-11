@@ -1,6 +1,6 @@
 import fs from "fs";
 import { KarabinerRules } from "./types";
-import { createHyperSubLayers, app, open, rectangle, shell } from "./utils";
+import { createHyperSubLayers, app, open, rectangle, shell, hyperWithoutShift } from "./utils";
 
 const ctrlVim = {
   description: "Left ctrl + hjkl to arrow keys Vim",
@@ -327,6 +327,7 @@ const rules: KarabinerRules[] = [
     },
     n: {
       description: "Move Word Back",
+      modifiers: hyperWithoutShift,
       to: [
         {
           key_code: "left_arrow",
@@ -336,6 +337,7 @@ const rules: KarabinerRules[] = [
     },
     m: {
       description: "Move Word Forward",
+      modifiers: hyperWithoutShift,
       to: [
         {
           key_code: "right_arrow",
@@ -586,6 +588,34 @@ const rules: KarabinerRules[] = [
         to: [
           {
             key_code: "down_arrow",
+            modifiers: ["command"],
+          },
+        ],
+      },
+    },
+    {
+      key: "n",
+      description: "Hyper Key + Shift + N",
+      modifiers: { mandatory: ["shift"] },
+      command: {
+        description: "Beginning of Line",
+        to: [
+          {
+            key_code: "left_arrow",
+            modifiers: ["command"],
+          },
+        ],
+      },
+    },
+    {
+      key: "m",
+      description: "Hyper Key + Shift + M",
+      modifiers: { mandatory: ["shift"] },
+      command: {
+        description: "End of Line",
+        to: [
+          {
+            key_code: "right_arrow",
             modifiers: ["command"],
           },
         ],

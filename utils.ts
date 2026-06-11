@@ -6,7 +6,13 @@ import { To, KeyCode, Manipulator, KarabinerRules, Modifiers } from "./types";
 export interface LayerCommand {
   to: To[];
   description?: string;
+  modifiers?: Modifiers;
 }
+
+/** Hyper direct bindings that have a separate Hyper+Shift variant */
+export const hyperWithoutShift: Modifiers = {
+  optional: ["control", "option", "command", "fn", "caps_lock"],
+};
 
 type HyperKeySublayer = {
   // The ? is necessary, otherwise we'd have to define something for _every_ key code
@@ -149,18 +155,22 @@ function createHyperKeyRule(
   key: KeyCode,
   command: LayerCommand,
   allSubLayerVariables: string[],
-  modifiers: Modifiers = { optional: ["any"] },
+  modifiers?: Modifiers,
   description?: string
 ): KarabinerRules {
+  const { modifiers: commandModifiers, ...commandFields } = command;
+  const fromModifiers =
+    modifiers ?? commandModifiers ?? { optional: ["any" as const] };
+
   return {
     description: description ?? command.description ?? `Hyper Key + ${key}`,
     manipulators: [
       {
-        ...command,
+        ...commandFields,
         type: "basic" as const,
         from: {
           key_code: key,
-          modifiers,
+          modifiers: fromModifiers,
         },
         conditions: [
           {
