@@ -267,9 +267,6 @@ const rules: KarabinerRules[] = [
   },
   ...createHyperSubLayers(
     {
-      spacebar: open(
-        "raycast://extensions/stellate/mxstbr-commands/create-notion-todo"
-      ),
       u: {
         description: "Backspace",
         to: [{ key_code: "delete_or_backspace" }],
@@ -323,8 +320,9 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      t: {
-        // Todoist commands
+      i: {
+        description: "Context Menu Click",
+        to: [{ pointing_button: "button2" }],
       },
       // b = "B"rowse
       b: {
