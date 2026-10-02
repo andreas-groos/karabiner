@@ -343,7 +343,7 @@ const rules: KarabinerRules[] = [
       // o = "Open" applications
       o: {
         v: app("Vivaldi"),
-        i: app("Cursor"),
+        i: app("Google Chrome"),
         c: app("Visual Studio Code"),
         s: app("Slack"),
         t: app("Warp"),
