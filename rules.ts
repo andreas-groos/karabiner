@@ -350,7 +350,7 @@ const rules: KarabinerRules[] = [
         f: app("Figma"),
         r: app("Finder"),
         m: app("Mail"),
-        a: app("ChatGPT"),
+        a: app("Claude"),
         k: app("Calendar"),
         p: app("Spotify"),
       },
